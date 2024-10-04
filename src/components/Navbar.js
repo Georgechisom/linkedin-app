@@ -1,6 +1,7 @@
 import 'boxicons';
 import '../styles/navbar.css';
-import home from '../icons/home.svg'
+import home from '../icons/home.svg';
+import Orangebox from './orangebox';
 
 
 function Navbar() {
@@ -34,7 +35,7 @@ function Navbar() {
             <path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"></path>
           </svg>,
             name: "Notifications"
-        }
+        },
     ]
     return (
         <div className="nav-container">
@@ -44,7 +45,7 @@ function Navbar() {
                     <box-icon type="logo" name="linkedin-square" color="#0a66c2" size="lg"></box-icon>
                 </span>
                 <span className="nav-search">
-                    <box-icon name="search" size="sm" animation="tada"></box-icon>
+                    <box-icon name="search" size="16px" animation="tada"></box-icon>
                     <input type="search" placeholder="Search"/>
                 </span>
             </div>
@@ -55,12 +56,21 @@ function Navbar() {
                 <nav className='navbar-items'>
                 {
                    navLists.map((eachNavlist, index) => (
-                        <a href="" key={index}>
-                            {eachNavlist.icon}
+                        <a href="" key={index} className='navbar-items-aa'>
+                            <div className='navbar-items-a'>{eachNavlist.icon}</div>
                             <div>{eachNavlist.name}</div>
                         </a>
                    ))   
                 }
+                <a>
+                    <img src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_1280.png" 
+                    alt='my image' 
+                    width={"24px"} 
+                    height={"24px"}
+                    style={{ background: "navajowhite", borderRadius: "50%" }}
+                    />
+                    <div style={{ justifyContent: "center" }}>Me</div>
+                </a>
                 </nav>
             </div>
 
@@ -77,7 +87,7 @@ function Navbar() {
                         </div>
                     </div>
                     <div className='prenium'>
-                        <span className='orangebox'></span>
+                        <Orangebox />
                         <span className=''>Try for NGN0: <br /> Prenium</span>
                     </div>
             </div>
